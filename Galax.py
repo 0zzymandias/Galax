@@ -5,7 +5,6 @@ import cmd
 import textwrap
 import random
 
-
 #World-time; actions have consequences. Game daysself.
 #If you destroy a manufacturing machine for AI brain chips, you fight less and less enemies over time.
 #However, prices for those chips will also skyrocket in the economy over time as the world becomes barren.
@@ -31,7 +30,7 @@ piercingdamage=0.00
 
 #Malice
 malice = 0
-#When this goes higher, bad things happen to the player.
+#When this gets higher, bad things happen to the player.
 
 #This will be called in times of combat. This will also be called in times where stat calculation is involved (i.e. picking a lock)
 
@@ -49,10 +48,10 @@ malice = 0
 #M = main gate
 #, = streetway
 
-
+#Development question to self: procedural generation, or actual world map?
 
 Rooms = {
-    'City Gate Cordon': {
+    '`City Gate Cordon`': {
         'DESC':'The entryway to the city, and by association, exit to the wastes. The guarded gate you entered from looms behind you.',
         'North': 'Residential District',
         'East': 'Commercial District',
@@ -75,10 +74,6 @@ Rooms = {
     }
 }
 
-print(Rooms['City Gate Cordon']['DESC'])
-print('')
-print('')
-print(Rooms.keys())
 DESC = 'desc'
 NORTH = 'north'
 SOUTH = 'south'
@@ -96,8 +91,7 @@ EDIBLE = 'edible'
 DESCWORDS = 'descwords'
 SCREEN_WIDTH=80
 
-location = 'Town Square' # start in town square
-inventory = ['README Note', 'Sword', 'Donut'] # start with blank inventory
+inventory = ['README Note', ''] # start with blank inventory
 
 
 #ITEMS
@@ -141,17 +135,22 @@ player.base_damage=5
 player.damage_bypass=0.00
 player.location = (Rooms['City Gate Cordon'])
 
-print(player.location)
-
 #=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
 
 #=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
 #INTRODUCTION===========================================================
 #=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+
 print("Hello!")
 
+
+print(random.choice(list(Rooms)))
+list(Rooms)
+print(list(Rooms))
 time.sleep(1)
+
+while
 
 print("Welcome to Galax Umbria - the world's longest-lasting fully-automated utopia.")
 
