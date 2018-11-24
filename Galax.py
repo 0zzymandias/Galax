@@ -57,7 +57,7 @@ Rooms = {
         'East': 'Commercial District',
         'West': 'Industrial District',
         'South': 'Sealed Gate'
-    },
+    },  
     'Residential District': {
         'DESC':'The entryway to the city, and by association, exit to the wastes. The guarded gate you entered from looms behind you.',
         'North': 'Inner Residential District',
@@ -133,8 +133,14 @@ player.dodge=0.05
 player.resistance=0.00
 player.base_damage=5
 player.damage_bypass=0.00
-player.location = (Rooms['City Gate Cordon'])
 
+def attack(x,y):
+    z = x*((100+y)/100)
+    print(z)
+attack(player.base_damage,player.strength)
+#Gross Damage Output = Base * ((100 + strength)/100)) || At 100 points of str, player should deal 2x their base damage every hit.
+
+#
 #=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
 
@@ -150,7 +156,11 @@ list(Rooms)
 print(list(Rooms))
 time.sleep(1)
 
-while
+def adder(x,y,z):
+    result=x*(y*z)-100
+    print(result)
+
+adder(100,2,3)
 
 print("Welcome to Galax Umbria - the world's longest-lasting fully-automated utopia.")
 
