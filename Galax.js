@@ -17,3 +17,12 @@ function interest(x,y,z) {
 }
 interest(10,0.01,10)
 console.log(interest)
+//Prints 20.00999 -- floating point precision
+
+var i = 0
+while (i<=100) {
+    console.log(i)
+    i+=1
+}
+
+document.write("Normal %cStyled %clorem %cipsum", "color: blue; font-weight: bold", "color: red", "background-image: linear-gradient(red, blue); color: white; padding: 5px;")
