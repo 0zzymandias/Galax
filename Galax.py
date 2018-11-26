@@ -139,7 +139,6 @@ player.damage_bypass=0.00
 
 
 print(combat.attack(player.base_damage,player.strength))
-#Gross Damage Output = Base * ((100 + strength)/100)) || At 100 points of str, player should deal 2x their base damage every hit.
 
 #
 #=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
