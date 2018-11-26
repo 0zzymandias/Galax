@@ -4,6 +4,7 @@ import sys
 import cmd
 import textwrap
 import random
+import combat
 
 #World-time; actions have consequences. Game daysself.
 #If you destroy a manufacturing machine for AI brain chips, you fight less and less enemies over time.
@@ -134,10 +135,8 @@ player.resistance=0.00
 player.base_damage=5
 player.damage_bypass=0.00
 
-def attack(x,y):
-    z = x*((100+y)/100)
-    print(z)
-attack(player.base_damage,player.strength)
+
+print(combat.attack(player.base_damage,player.strength))
 #Gross Damage Output = Base * ((100 + strength)/100)) || At 100 points of str, player should deal 2x their base damage every hit.
 
 #
