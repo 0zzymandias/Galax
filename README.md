@@ -3,3 +3,5 @@ This is a Python game in the making as of 11/20/2018. Work on this extends back 
 The original intention was/is to heuristically learn Python and its modules whilst accomplishing a certain outcome.
 
 Explorations are being done in Javascript as well.
+
+11/26: Combat module added
