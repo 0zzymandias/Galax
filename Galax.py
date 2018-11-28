@@ -108,7 +108,7 @@ inventory = ['README Note', ''] # start with blank inventory
 
 class player(object):
     """docstring for player."""
-    def __init__(self, health, stamina, strength, dexterity, intelligence, charisma, agility, luck, dodge, resistance, base_damage, damage_bypass, strweight,dexweight,intweight,chrweight,agiweight,luckweight):
+    def __init__(self, health, stamina, strength, dexterity, intelligence, charisma, agility, luck, dodge, resistance, base_damage, damage_bypass, strweight,dexweight,intweight,chrweight,agiweight,lckweight):
         super(player, self).__init__()
         self.health = health
         self.stamina = stamina
@@ -128,7 +128,7 @@ class player(object):
         self.intweight = intweight
         self.chrweight = chrweight
         self.agiweight = agiweight
-        self.luckweight = luckweight
+        self.lckweight = lckweight
 
 
 player.health=100
@@ -144,6 +144,12 @@ player.resistance=0.00
 player.base_damage=5
 player.damage_bypass=0.00
 
+player.strweight = 100
+player.dexweight = 100
+player.intweight = 100
+player.chrweight = 100
+player.agiweight = 100
+player.lckweight = 100
 
 print(combat.playerattack
     (
@@ -158,7 +164,7 @@ print(combat.playerattack
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
 
 #
-#INTRODUCTION===========================================================
+#INTRODUCTION
 #
 
 print("Hello!")
