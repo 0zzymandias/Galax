@@ -7,6 +7,7 @@ import random
 
 #My modules
 import combat
+import actionpoints
 
 #World-time; actions have consequences. Game daysself.
 #If you destroy a manufacturing machine for AI brain chips, you fight less and less enemies over time.
@@ -101,13 +102,13 @@ inventory = ['README Note', ''] # start with blank inventory
 
 
 
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #FUNCTIONS TO BOOST STATS == CALL IN EVENTS ==========================
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 
 class player(object):
     """docstring for player."""
-    def __init__(self, health, stamina, strength, dexterity, intelligence, charisma, agility, luck, dodge, resistance, base_damage, damage_bypass, location):
+    def __init__(self, health, stamina, strength, dexterity, intelligence, charisma, agility, luck, dodge, resistance, base_damage, damage_bypass, strweight,dexweight,intweight,chrweight,agiweight,luckweight):
         super(player, self).__init__()
         self.health = health
         self.stamina = stamina
@@ -121,7 +122,13 @@ class player(object):
         self.resistance = resistance
         self.base_damage = base_damage
         self.damage_bypass = damage_bypass
-        self.location = location
+        #These are the weights that influence stat growth above. Boosting these parameters will boost further the growth of the original stats whenever a stat-boosting event is called.
+        self.strweight = strweight
+        self.dexweight = dexweight
+        self.intweight = intweight
+        self.chrweight = chrweight
+        self.agiweight = agiweight
+        self.luckweight = luckweight
 
 
 player.health=100
@@ -138,15 +145,21 @@ player.base_damage=5
 player.damage_bypass=0.00
 
 
-print(combat.attack(player.base_damage,player.strength))
+print(combat.playerattack
+    (
+    player.base_damage,
+    player.strength,
+    player.dexterity,
+    player.luck)
+    )
 
 #
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
 
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #INTRODUCTION===========================================================
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 
 print("Hello!")
 
@@ -170,9 +183,9 @@ print("Please state your name.")
 
 time.sleep(1)
 
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #Enter player name.
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 print("")
 print("--[Enter your name.]--")
 
@@ -193,9 +206,9 @@ if name=="Ozymandias":
 
 time.sleep(3)
 
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #STATS EXPLANATION TIME ------------------------
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 print("")
 print("--[The world of Galax Umbria uses certain stats to measure your capabilities.]--")
 
@@ -256,6 +269,18 @@ time.sleep(6)
 print("--[Your actions will determine your stat growth.]--")
 time.sleep(2)
 print("")
+time.sleep(2)
+print("Please answer the following questionnaire.")
+time.sleep(1)
+print("")
+print("Question 1:")
+time.sleep(1)
+print("If you saw a person trapped behind ")
+
+a = input("1, or 2?")
+if a = 1:
+
+
 
 agibig()
 agibig()
@@ -278,9 +303,9 @@ print("")
 print("--[Press ENTER to continue to the next section.]--")
 input()
 
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #WORKING FUNCTIONS
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #These were in an earlier build of Galax -- where you set your stats. See comment below. 
 #UNUSED
 def definestrength():
@@ -295,7 +320,7 @@ def defineagility():
     player.agility=15+int(input())
 def defineluck():
     player.luck=15+int(input())
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 def strengthsmall():
     player.strength+=1
 def strengthbig():
@@ -336,9 +361,9 @@ time.sleep(2)
 print("--[Tutorial: Say 'Nav'. Case does not matter.]--")
 choice = input()
 choice = choice.lower()
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #This nav tutorial will loop until you get it right, damn it.
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 while (choice != "nav"):
     print("--[Tutorial: Say 'Nav'. Case does not matter.]--")
     choice = input()
@@ -350,9 +375,9 @@ print("Our state-of-the-art navigation suite will help you navigate society easi
 time.sleep(3)
 print("Call it up at any time by saying 'Nav'.")
 time.sleep(3)
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 #First credit sequence; being released into the world.
-#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#=+=#
+#
 
 print("Your documents check out. All new citizens are given credits in our society.")
 time.sleep(3)
