@@ -8,6 +8,7 @@ import random
 #My modules
 import combat
 import actionpoints
+import stats
 
 #World-time; actions have consequences. Game daysself.
 #If you destroy a manufacturing machine for AI brain chips, you fight less and less enemies over time.
@@ -158,14 +159,39 @@ print(combat.playerattack
     player.dexterity,
     player.luck)
     )
-
+def statadd_small(stat):
+    stat+=1
+def statadd_medium(stat):
+    stat+=5
+def statadd_big(stat):
+    stat+=10
+def statadd_debug(stat):
+    stat+=100
 #
 #
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
-
+abc = 0
 #
 #INTRODUCTION
 #
+print(player.strength)
+print("strength1")
+
+statadd_debug(abc)
+print(abc)
+
+print(player.strength)
+print("strength2")
+
+print("Current Stats:")
+print(str(player.strength)+" Strength")
+print(str(player.dexterity)+" Dexterity")
+print(str(player.intelligence)+" Intelligence")
+print(str(player.charisma)+" Charisma")
+print(str(player.agility)+" Agility")
+print(str(player.luck)+" Luck")
+
+time.sleep(3)
 
 print("Hello!")
 
@@ -284,16 +310,7 @@ time.sleep(1)
 print("If you saw a person trapped behind ")
 
 a = input("1, or 2?")
-if a = 1:
 
-
-
-agibig()
-agibig()
-agibig()
-
-luckbig()
-strengthbig()
 time.sleep(1)
 print(str(name))
 time.sleep(1)
@@ -307,59 +324,7 @@ print(str(player.luck)+" Luck")
 
 print("")
 print("--[Press ENTER to continue to the next section.]--")
-input()
 
-#
-#WORKING FUNCTIONS
-#
-#These were in an earlier build of Galax -- where you set your stats. See comment below. 
-#UNUSED
-def definestrength():
-    player.strength=15+int(input())
-def definedexterity():
-    player.dexterity=15+int(input())
-def defineintelligence():
-    player.intelligence=15+int(input())
-def definecharisma():
-    player.charisma=15+int(input())
-def defineagility():
-    player.agility=15+int(input())
-def defineluck():
-    player.luck=15+int(input())
-#
-def strengthsmall():
-    player.strength+=1
-def strengthbig():
-    player.strength+=5
-
-def dexsmall():
-    player.dexterity+=1
-def dexbig():
-    player.dexterity+=5
-
-def intsmall():
-    player.intelligence+=1
-def intbig():
-    player.intelligence+=5
-
-def chrsmall():
-    player.charisma+=1
-def chrbig():
-    player.charisma+=5
-
-def agismall():
-    player.agility+=1
-def agibig():
-    player.agility+=5
-
-def lucksmall():
-    player.luck+=1
-def luckbig():
-    player.luck+=5
-
-
-#strengthallocate = input()
-#print("Please state your aptitudes.")
 #/////////////////////////////////////////////////////////////////////////////////////////////
 #BEGIN NAV TUTORIAL=========================================================
 print("Your visor contains local navigation information; to summarize where you are, say 'Nav'.")
