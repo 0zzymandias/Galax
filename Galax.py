@@ -159,6 +159,7 @@ print(combat.playerattack
     player.dexterity,
     player.luck)
     )
+
 def statadd_small(stat):
     return stat + 1
 def statadd_medium(stat):
@@ -167,7 +168,6 @@ def statadd_big(stat):
     return stat + 10
 def statadd_debug(stat):
     return stat + 100
-
 
 #
 #
@@ -179,9 +179,7 @@ abc = 0
 print(player.strength)
 print("strength1")
 
-player.strength = statadd_debug(player.strength)
-player.strength = statadd_debug(player.strength)
-player.strength = statadd_debug(player.strength)
+player.strength = statadd_small(player.strength)
 
 print(player.strength)
 print("strength2")
