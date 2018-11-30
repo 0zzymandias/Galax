@@ -160,13 +160,15 @@ print(combat.playerattack
     player.luck)
     )
 def statadd_small(stat):
-    stat+=1
+    return stat + 1
 def statadd_medium(stat):
-    stat+=5
+    return stat + 5
 def statadd_big(stat):
-    stat+=10
+    return stat + 10
 def statadd_debug(stat):
-    stat+=100
+    return stat + 100
+
+
 #
 #
 #Decision by me -- instead of having the player set stats at the beginning (a la Fallout), I'll have them grow per their own decisions.
@@ -177,8 +179,9 @@ abc = 0
 print(player.strength)
 print("strength1")
 
-statadd_debug(abc)
-print(abc)
+player.strength = statadd_debug(player.strength)
+player.strength = statadd_debug(player.strength)
+player.strength = statadd_debug(player.strength)
 
 print(player.strength)
 print("strength2")
