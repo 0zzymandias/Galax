@@ -176,15 +176,25 @@ abc = 0
 #
 #INTRODUCTION
 #
-print(player.strength)
-print("strength1")
 
-player.strength = statadd_small(player.strength)
 
-print(player.strength)
-print("strength2")
+print("Current Stats BEFORE CHANGE:")
+print(str(player.strength)+" Strength")
+print(str(player.dexterity)+" Dexterity")
+print(str(player.intelligence)+" Intelligence")
+print(str(player.charisma)+" Charisma")
+print(str(player.agility)+" Agility")
+print(str(player.luck)+" Luck")
 
-print("Current Stats:")
+
+#Recursive function?
+player.strength = statadd_debug(player.strength)
+player.strength = statadd_debug(player.strength)
+player.strength = statadd_debug(player.strength)
+player.strength = statadd_debug(player.strength)
+player.agility = statadd_debug(player.agility)
+
+print("Current Stats AFTER CHANGE:")
 print(str(player.strength)+" Strength")
 print(str(player.dexterity)+" Dexterity")
 print(str(player.intelligence)+" Intelligence")
