@@ -145,6 +145,9 @@ player.resistance=0.00
 player.base_damage=5
 player.damage_bypass=0.00
 
+#Functions for adding stats not necessary -- these can be manually improved on a per-event basis.
+#Functions required only for higher actions such as attack calculations -- not simple improvements.
+
 player.strweight = 100
 player.dexweight = 100
 player.intweight = 100
@@ -160,14 +163,6 @@ print(combat.playerattack
     player.luck)
     )
 
-def statadd_small(stat):
-    return stat + 1
-def statadd_medium(stat):
-    return stat + 5
-def statadd_big(stat):
-    return stat + 10
-def statadd_debug(stat):
-    return stat + 100
 
 #
 #
@@ -176,31 +171,6 @@ abc = 0
 #
 #INTRODUCTION
 #
-
-
-print("Current Stats BEFORE CHANGE:")
-print(str(player.strength)+" Strength")
-print(str(player.dexterity)+" Dexterity")
-print(str(player.intelligence)+" Intelligence")
-print(str(player.charisma)+" Charisma")
-print(str(player.agility)+" Agility")
-print(str(player.luck)+" Luck")
-
-
-#Recursive function?
-player.strength = statadd_debug(player.strength)
-player.strength = statadd_debug(player.strength)
-player.strength = statadd_debug(player.strength)
-player.strength = statadd_debug(player.strength)
-player.agility = statadd_debug(player.agility)
-
-print("Current Stats AFTER CHANGE:")
-print(str(player.strength)+" Strength")
-print(str(player.dexterity)+" Dexterity")
-print(str(player.intelligence)+" Intelligence")
-print(str(player.charisma)+" Charisma")
-print(str(player.agility)+" Agility")
-print(str(player.luck)+" Luck")
 
 time.sleep(3)
 
